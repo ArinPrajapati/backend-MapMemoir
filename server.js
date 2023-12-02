@@ -9,7 +9,13 @@ const cors = require('cors');
 app.use(express.json());
 connectDB();
 Port = process.env.PORT || 8888;
-app.use(cors());
+
+const corsOptions = {
+  origin: 'https://master--visionary-pavlova-ebf379.netlify.app/',
+  
+};
+
+app.use(cors(corsOptions));
 
 
 app.use("/map/pins", pinRouter);
